@@ -119,14 +119,14 @@ export default function FileInput({ id, label, onChange, preview, error, setErro
               <button
                 type="button"
                 onClick={handleRemove}
-                className="px-3 py-1 text-[12px] rounded-lg bg-natural-500-trans text-natural-300 hover:underline hover:cursor-pointer"
+                className="px-3 py-1 text-[12px] rounded-lg bg-natural-500-trans hover:bg-natural-500 text-natural-300 hover:underline hover:cursor-pointer"
               >
                 Remove image
               </button>
               <button
                 type="button"
                 onClick={handleClick}
-                className="px-3 py-1 text-[12px] rounded-lg bg-natural-500-trans text-natural-300 hover:underline  hover:cursor-pointer"
+                className="px-3 py-1 text-[12px] rounded-lg bg-natural-500-trans hover:bg-natural-500 text-natural-300 hover:underline  hover:cursor-pointer"
               >
                 Change image
               </button>
