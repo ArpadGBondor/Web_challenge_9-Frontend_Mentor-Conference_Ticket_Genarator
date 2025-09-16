@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400..800&display=swap');
+
+body {
+  margin: 0;
+
+  /* prettier-ignore */
+  background-image: 
+    url('/images/pattern-squiggly-line-bottom-mobile-tablet.svg'), /* bottom-left */
+    url('/images/pattern-squiggly-line-top.svg'),                  /* top-right */
+    url('/images/pattern-lines-mobile.svg'),                       /* line pattern */
+    url('/images/pattern-circle.svg'),                             /* circle pattern */
+    url('/images/pattern-circle.svg'),                             /* circle pattern */
+    url('/images/background-mobile.png')                           /* base image */;
+
+  background-repeat: no-repeat, no-repeat, repeat no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: left bottom, right top 25px, center top, 115% 75%, -5% -5%, center;
+  background-size: 300px auto, 100px auto, auto, 100px, 125px, cover;
+
+  min-height: 100vh;
+
+  font-family: 'Inconsolata', monospace;
+
+  color: var(--color-natural-0);
+
+  position: relative;
+}
+
+label {
+  color: var(--color-natural-0);
+  font-size: 20px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .attribution p {
+  font-size: 11px;
+  text-align: center;
+  color: var(--color-natural-300);
+}
+footer .attribution p a {
+  color: var(--color-orange-700);
+}
+
+.text-gradient-orange-white {
+  background: var(--gradient-color-orange-white);
+  -webkit-background-clip: text; /* Safari/Chrome */
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* Firefox */
+  color: transparent; /* fallback */
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  body {
+    /* prettier-ignore */
+    background-image: 
+        url('/images/pattern-squiggly-line-bottom-mobile-tablet.svg'), /* bottom-left */
+        url('/images/pattern-squiggly-line-top.svg'),                  /* top-right */
+        url('/images/pattern-lines.svg'),                              /* line pattern */
+        url('/images/pattern-circle.svg'),                             /* circle pattern */
+        url('/images/pattern-circle.svg'),                             /* circle pattern */
+        url('/images/background-tablet.png')                           /* base image */;
+
+    background-position: left bottom, right top 40px, center top, 90% 65%, 25px -50px, center;
+    background-size: 600px auto, 200px auto, auto, 175px, 175px, cover;
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 1025px) {
+  body {
+    /* prettier-ignore */
+    background-image: 
+        url('/images/pattern-squiggly-line-bottom-desktop.svg'), /* bottom-left */
+        url('/images/pattern-squiggly-line-top.svg'),            /* top-right */
+        url('/images/pattern-lines.svg'),                        /* line pattern */
+        url('/images/pattern-circle.svg'),                       /* circle pattern */
+        url('/images/pattern-circle.svg'),                       /* circle pattern */
+        url('/images/background-desktop.png')                    /* base image */;
+    background-position: left bottom, right top 50px, center top, 75% center, 50px -75px, center;
+    background-size: auto, auto, auto, auto, auto, cover;
+  }
+}

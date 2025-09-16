@@ -1,0 +1,27 @@
+:root {
+  --color-natural-0: hsl(0, 0%, 100%);
+  --color-natural-300: hsl(252, 6%, 83%);
+  --color-natural-500: hsl(245, 15%, 58%);
+  --color-natural-700: hsl(245, 19%, 35%);
+  --color-natural-900: hsl(248, 70%, 10%);
+
+  --color-orange-500: hsl(7, 88%, 67%);
+  --color-orange-700: hsl(7, 71%, 60%);
+
+  --gradient-color-orange-white: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+}
+
+/*
+## Colors
+
+- Neutral 0: hsl(0, 0%, 100%)
+- Neutral 300: hsl(252, 6%, 83%)
+- Neutral 500: hsl(245, 15%, 58%)
+- Neutral 700: hsl(245, 19%, 35%)
+- Neutral 900: hsl(248, 70%, 10%)
+
+- Orange 500: hsl(7, 88%, 67%)
+- Orange 700: hsl(7, 71%, 60%)
+
+- Gradient (text): hsl(7, 86%, 67%) to hsl(0, 0%, 100%)
+*/
