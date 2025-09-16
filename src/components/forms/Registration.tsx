@@ -75,6 +75,7 @@ export default function Registration() {
     <div className="w-full max-w-lg p-6 rounded-xl shadow-lg">
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <FileInput
+          id="photo"
           label="Upload Avatar"
           preview={formState.photo}
           onChange={handlePhotoChange}
@@ -83,6 +84,7 @@ export default function Registration() {
           clearError={clearPhotoError}
         />
         <TextInput
+          id="name"
           type="text"
           placeholder=""
           label="Full Name"
@@ -91,6 +93,7 @@ export default function Registration() {
           error={errorState.nameError}
         />
         <TextInput
+          id="email"
           type="email"
           placeholder="example@email.com"
           label="Email Address"
@@ -99,6 +102,7 @@ export default function Registration() {
           error={errorState.emailError}
         />
         <TextInput
+          id="github"
           type="text"
           placeholder="@yourusername"
           label="GitHub Username"
@@ -108,7 +112,7 @@ export default function Registration() {
         />
 
         <FormButton type="submit" variant="primary">
-          Generate my Ticket
+          Generate My Ticket
         </FormButton>
       </form>
     </div>

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 
 interface FileInputProps {
+  id: string;
   label?: string;
   onChange: (file: File | null) => void;
   preview?: string | null;
@@ -9,7 +10,7 @@ interface FileInputProps {
   clearError?: () => void;
 }
 
-export default function FileInput({ label, onChange, preview, error, setError, clearError }: FileInputProps) {
+export default function FileInput({ id, label, onChange, preview, error, setError, clearError }: FileInputProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -79,7 +80,11 @@ export default function FileInput({ label, onChange, preview, error, setError, c
 
   return (
     <div className="flex flex-col gap-2">
-      {label && <label className="text-sm font-medium text-natural-0">{label}</label>}
+      {label && (
+        <label htmlFor={id} className="text-sm font-medium text-natural-0">
+          {label}
+        </label>
+      )}
 
       <div
         onClick={!preview ? handleClick : undefined}
@@ -87,8 +92,8 @@ export default function FileInput({ label, onChange, preview, error, setError, c
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         className={`flex flex-col items-center justify-center border-2 border-dashed rounded-xl p-4 transition-colors
-          ${isDragging ? 'border-orange-500 bg-natural-500' : 'border-natural-500 bg-natural-500-trans'}
-          ${preview ? '' : 'cursor-pointer hover:underline'}
+          ${isDragging ? 'border-orange-500 bg-natural-500' : 'border-natural-300 bg-natural-500-trans'}
+          ${preview ? '' : 'cursor-pointer hover:underline hover:bg-natural-500'}
         `}
       >
         {!preview && (
@@ -96,7 +101,7 @@ export default function FileInput({ label, onChange, preview, error, setError, c
             <img
               src="/images/icon-upload.svg"
               alt="Upload"
-              className="w-12 h-12 mb-4 bg-natural-500-trans rounded-xl p-2 border border-natural-500"
+              className="w-12 h-12 mb-4 bg-natural-500-trans rounded-xl p-2 border border-natural-300"
             />
             <p className={`${isDragging ? 'text-natural-0' : 'text-natural-300'} text-center `}>
               Drag and drop or click to upload
@@ -108,7 +113,7 @@ export default function FileInput({ label, onChange, preview, error, setError, c
             <img
               src={preview}
               alt="Preview"
-              className="w-12 h-12 mb-4 bg-natural-500-trans rounded-xl border border-natural-500 object-cover"
+              className="w-12 h-12 mb-4 bg-natural-500-trans rounded-xl border border-natural-300 object-cover"
             />
             <div className="flex gap-2">
               <button
@@ -128,7 +133,7 @@ export default function FileInput({ label, onChange, preview, error, setError, c
             </div>
           </>
         )}
-        <input type="file" accept="image/*" ref={fileInputRef} onChange={handleChange} className="hidden" />
+        <input id={id} type="file" accept="image/*" ref={fileInputRef} onChange={handleChange} className="hidden" />
       </div>
 
       <div className={`flex items-center gap-2 text-xs ${error ? 'text-orange-500' : 'text-natural-300'}`}>

@@ -14,7 +14,7 @@ export default function FormButton({
   ...props
 }: FormButtonProps) {
   const baseStyles =
-    'p-2 rounded-xl font-bold ring-offset-natural-900 focus:outline-none focus:ring-1 focus:ring-offset-4 hover:cursor-pointer my-2';
+    'p-2 md:p-4 text-[16px] md:text-[20px] rounded-xl font-bold ring-offset-natural-900 focus:outline-none focus:ring-1 focus:ring-offset-4 hover:cursor-pointer my-2';
 
   const variantStyles: Record<Variant, string> = {
     primary: 'bg-orange-700 text-natural-900 hover:bg-orange-500 focus:ring-natural-0',
